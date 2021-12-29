@@ -164,6 +164,10 @@ spec:
             - --http.corsdomain
             - "*"
             - --vmdebug
+            - --pprof
+            - --pprof.port=8546
+            - --trace
+            - /root/trace.txt
           ports:
             - name: http-rpc
               containerPort: 8544

@@ -164,6 +164,7 @@ spec:
             - --http.corsdomain
             - "*"
             - --vmdebug
+            - --verbosity=5
             - --pprof
             - --trace
             - /root/trace.txt

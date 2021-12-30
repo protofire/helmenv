@@ -12,7 +12,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/pkg/errors"
 	"github.com/smartcontractkit/helmenv/chaos"
 	"golang.org/x/sync/errgroup"
 	"helm.sh/helm/v3/pkg/cli"
@@ -91,9 +90,9 @@ func DeployEnvironment(config *Config, chartDirectory string) (*Environment, err
 	}
 	if err := e.DeployAll(); err != nil {
 		log.Error().Err(err).Msg("Error while deploying the environment")
-		if err := e.Teardown(); err != nil {
-			return nil, errors.Wrapf(err, "failed to shutdown namespace")
-		}
+		//if err := e.Teardown(); err != nil {
+		//	return nil, errors.Wrapf(err, "failed to shutdown namespace")
+		//}
 		return nil, err
 	}
 	return e, e.SyncConfig()

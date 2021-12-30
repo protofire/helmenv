@@ -165,7 +165,6 @@ spec:
             - "*"
             - --vmdebug
             - --pprof
-            - --pprof.port=8546
             - --trace
             - /root/trace.txt
           ports:
